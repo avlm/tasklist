@@ -1,0 +1,62 @@
+
+<!doctype html>
+<html lang="en" class="h-100">
+    <head>
+        <meta charset="utf-8">
+        <title>Python Tasklist</title>
+
+        <!-- Bootstrap core CSS -->
+        <link href="/node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+        <link href="/css/style.css" rel="stylesheet">
+    </head>
+    <body class="d-flex flex-column h-100">
+        <main role="main" class="flex-shrink-0">
+            <div class="container">
+                <h1 class="mt-5 text-center">Simple Tasklist</h1>
+                <button id="addTaskBtn" name="addTaskBtn" type="button" class="btn btn-primary" data-toggle="modal" data-target="#addTaskModal"><i class='fas fa-plus'></i> Add task</button>
+                <div id="todo" class="tasks alert alert-primary" role="alert">
+                    <h4>To Do</h4>
+                </div>
+                <div id="done" class="tasks alert alert-danger" role="alert">
+                    <h4>Done</h4>
+                </div>
+            </div>
+        </main>
+
+        <div id="addTaskModal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Add new task</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <input type="text" class="form-control" name="taskTitle" id="taskTitle" placeholder="Write your task...">
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary" id="saveBtn">Save</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer class="footer mt-auto py-3">
+          <div class="container text-center">
+            <span class="text-muted">Antonio Victor - <a href="https://github.com/avlm">Github</a></span>
+          </div>
+        </footer>
+    </body>
+    <script type="text/javascript" src="node_modules/jquery/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $.getScript("js/vars.js")
+            $.getScript("js/functions.js")
+            $.getScript("js/app.js")
+        })
+    </script>
+</html>
