@@ -1,21 +1,22 @@
 MANAGE_PY = python manage.py
 PIPENV = pipenv
+PIPENV_RUN = $(PIPENV) run
 
 run:
-	$(MANAGE_PY) runserver
+	$(PIPENV_RUN) $(MANAGE_PY) runserver
 
 makemig:
-	$(MANAGE_PY) makemigrations
+	$(PIPENV_RUN) $(MANAGE_PY) makemigrations
 
 mig:
-	$(MANAGE_PY) migrate
+	$(PIPENV_RUN) $(MANAGE_PY) migrate
 
 setup:
 	$(PIPENV) install
-	$(PIPENV) run $(MANAGE_PY) migrate
-	$(PIPENV) run $(MANAGE_PY) createsuperuser
+	$(PIPENV_RUN) $(MANAGE_PY) migrate
+	$(PIPENV_RUN) $(MANAGE_PY) createsuperuser
 
 setup.dev:
 	$(PIPENV) install --dev
-	$(PIPENV) run $(MANAGE_PY) migrate
-	$(PIPENV) run $(MANAGE_PY) createsuperuser
+	$(PIPENV_RUN) $(MANAGE_PY) migrate
+	$(PIPENV_RUN) $(MANAGE_PY) createsuperuser

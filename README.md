@@ -11,6 +11,7 @@ To run the project, do the following steps:
 1. `cd` into `backend/`
 2. `make setup` or `make setup.dev` to install dependencies and create/migrate sqlite DB
 3. `make run` to start django server
+4. Leave this running and open another terminal instance
 
 ## Run Frontend
 1. `cd` into `frontend/`
